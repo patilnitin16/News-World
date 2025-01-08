@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
-
 const Newspage = ({ newQuery }) => {
   const [query, setQuery] = useState("india");
   const [news, setNews] = useState([]);
@@ -13,18 +11,13 @@ const Newspage = ({ newQuery }) => {
     const finalNews = await response.json();
     setNews(finalNews.articles);
   };
-
-   
-  
-
-  useEffect(()=>{
+  useEffect(() => {
     if (newQuery) {
-        setQuery(newQuery);
-      }
-  },[newQuery]);
+      setQuery(newQuery);
+    }
+  }, [newQuery]);
 
   useEffect(() => {
-    
     apiCall();
   }, [query]);
   return (
@@ -36,13 +29,18 @@ const Newspage = ({ newQuery }) => {
               key={idx}
               className="flex flex-col gap-3 md:max-w-96 max-h-80 p-2 overflow-hidden shadow-xl asm:w-full"
             >
-              <img src={elem.urlToImage} className="h-56 w-[370px] asm:w-full" />
+              <img
+                src={elem.urlToImage}
+                className="h-56 w-[370px] asm:w-full"
+              />
               <h2 className="font-bold text-sm h-20 overflow-hidden">
                 {elem.title}
               </h2>
 
               <button className="bg-blue-500 text-white py-1 px-3 rounded w-24">
-                <a href={elem.url} target="about_blank">Read</a>
+                <a href={elem.url} target="about_blank">
+                  Read
+                </a>
               </button>
             </div>
           );
