@@ -37,7 +37,7 @@ const Navbar = ({ handleQuery }) => {
           Sports
         </div>
         <div className="sm:w-32 asm:w-20 asm:text-sm sm:text-lg text-center rounded px-[4px] py-[2px] font-semibold bg-red-400 text-white cursor-pointer" onClick={()=>onNewChange("politics")}>
-          Ploitics
+          Politics
         </div>
         <div className="sm:w-32 asm:w-20 asm:text-sm sm:text-lg text-center rounded px-[4px] py-[2px] font-semibold bg-red-400 text-white cursor-pointer" onClick={()=>onNewChange("health")}>
           Health
