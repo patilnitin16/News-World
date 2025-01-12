@@ -6,7 +6,7 @@ const Newspage = ({ newQuery }) => {
 
   const apiCall = async () => {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${query}&sortBy=publishedAt&apiKey=5c6949c3f2164e9fbe6e637cfd234e6d&language=en`
+      `https://newsapi.org/v2/everything?q=${query}&sortBy=publishedAt&language=en&${import.meta.env.VITE_NEWS_API}`
     );
     const finalNews = await response.json();
     setNews(finalNews.articles);
