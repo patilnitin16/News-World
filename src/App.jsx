@@ -11,9 +11,9 @@ const App = () => {
   return (
     <div>
       <Navbar handleQuery={handleQuery} />
-      <Suspense fallback="Loading News......">
-        <Newspage newQuery={query} />
-      </Suspense>
+
+      <Newspage newQuery={query} />
+
       <footer className=" text-center my-4 border-t-2 flex items-center justify-center  ">
         <p>Copyright 2020-2025. @NewsWorld. All rights reserved</p>
       </footer>

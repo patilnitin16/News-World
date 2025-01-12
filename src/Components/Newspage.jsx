@@ -6,7 +6,7 @@ const Newspage = ({ newQuery }) => {
 
   const apiCall = async () => {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${query}&from=2024-12-07&sortBy=publishedAt&apiKey=5c6949c3f2164e9fbe6e637cfd234e6d&language=en`
+      `https://newsapi.org/v2/everything?q=${query}&sortBy=publishedAt&apiKey=5c6949c3f2164e9fbe6e637cfd234e6d&language=en`
     );
     const finalNews = await response.json();
     setNews(finalNews.articles);
@@ -36,11 +36,8 @@ const Newspage = ({ newQuery }) => {
               <h2 className="font-bold text-sm h-20 overflow-hidden">
                 {elem.title}
               </h2>
-
               <button className="bg-blue-500 text-white py-1 px-3 rounded w-24">
-                <a href={elem.url} target="about_blank">
-                  Read
-                </a>
+                <a href={elem.url}>Read</a>
               </button>
             </div>
           );
